@@ -381,6 +381,7 @@ class MFormParser
         $templateElement = new MFormElement();
         $templateElement->setLabel($this->parseElement($this->createLabelElement($item), 'base'))
             ->setElement($this->parseElement($element, 'input'))
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -415,6 +416,7 @@ class MFormParser
         $templateElement = new MFormElement();
         $templateElement->setLabel($this->parseElement($this->createLabelElement($item), 'base'))
             ->setElement($this->parseElement($element, 'textarea'))
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -512,6 +514,7 @@ class MFormParser
         $templateElement = new MFormElement();
         $templateElement->setLabel($this->parseElement($this->createLabelElement($item), 'base'))
             ->setElement($this->parseElement($element, 'select'))
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -614,6 +617,7 @@ class MFormParser
         $templateElement = new MFormElement();
         $templateElement->setLabel($this->parseElement($this->createLabelElement($item), 'base'))
             ->setElement($checkboxElements)
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -692,6 +696,7 @@ class MFormParser
         $templateElement = new MFormElement();
         $templateElement->setLabel($this->parseElement($this->createLabelElement($item), 'base'))
             ->setElement($radioElements)
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
         if (!empty($item->getAttributes()['form-group-class'])) {
             $templateElement->setClass($item->getAttributes()['form-group-class']);
@@ -772,6 +777,7 @@ class MFormParser
 
         // get body inner
         $templateElement->setElement($body)
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -850,6 +856,7 @@ class MFormParser
 
         // get body inner
         $templateElement->setElement($body)
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         // add to output element array
@@ -1049,6 +1056,7 @@ class MFormParser
             }
         }
         $templateElement->setElement($html)
+            ->setNotice($item->getNotice())
             ->setType($this->getDefaultTemplateType($item, $templateElement));
 
         $templateElement = rex_extension::registerPoint(
