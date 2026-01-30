@@ -20,7 +20,8 @@ switch ($this->getVar('type')) {
 $labelWrapperOpen = '<div class="' . $this->getVar('labelColClass') . '">';
 $labelWrapperClose = '</div>';
 $inputWrapperOpen = '<div class="' . $this->getVar('formItemColClass') . '">';
-$inputWrapperClose = ($this->getVar('notCloseInputWrapper')) ? '' : '</div>';
+$notice = $this->getVar('notice') ? '<p class="help-block small">' . $this->getVar('notice') . '</p>' : '';
+$inputWrapperClose = ($this->getVar('notCloseInputWrapper')) ? '' : ($notice . '</div>');
 $formGroupClose = ($this->getVar('notClosedFormGroup')) ? '' : '</div>';
 
 echo '<div class="form-group ' . $this->getVar('class') . '">' . $labelWrapperOpen . $this->getVar('label') . $this->getVar('infoTooltip') . $this->getVar('infoCollapseButton') . $labelWrapperClose . $inputWrapperOpen . $this->getVar('element') . $inputWrapperClose . $formGroupClose . $this->getVar('infoCollapse');

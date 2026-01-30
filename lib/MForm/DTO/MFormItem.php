@@ -37,6 +37,7 @@ class MFormItem
     public string $infoCollapse = "";
     public string $infoTooltipIcon = "";
     public string $infoCollapseIcon = "";
+    public string $notice = "";
 
     public function getType(): string
     {
@@ -349,6 +350,17 @@ class MFormItem
     public function setInfoCollapseIcon(string $infoCollapseIcon): static
     {
         $this->infoCollapseIcon = $infoCollapseIcon;
+        return $this;
+    }
+
+    public function getNotice(): string
+    {
+        return $this->notice;
+    }
+
+    public function setNotice(string $notice): static
+    {
+        $this->notice = $notice;
         return $this;
     }
 }

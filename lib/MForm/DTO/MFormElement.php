@@ -30,6 +30,7 @@ class MFormElement
     public string $infoTooltip = "";
     public string $infoCollapseButton = "";
     public string $infoCollapse = "";
+    public string $notice = "";
     public bool $full = false;
 
     public function setId(string $id): static
@@ -161,6 +162,12 @@ class MFormElement
     public function setInfoCollapse(string $infoCollapse): static
     {
         $this->infoCollapse = $infoCollapse;
+        return $this;
+    }
+
+    public function setNotice(string $notice): static
+    {
+        $this->notice = $notice;
         return $this;
     }
 
